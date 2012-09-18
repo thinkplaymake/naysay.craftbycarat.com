@@ -5,6 +5,7 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<style>
 			.hero-unit p { margin-top: 30px; font-size: 150%; }
+			h2 { margin-left: 60px; }
 		</style>
 	</head>
 	<body>
@@ -19,15 +20,28 @@
 			</div>
 			
 			
+			<div class="theform">
 			
-			<form action="do.php">
-				<input type="text" name="reason" class="input-xxlarge" />
-				
-				<button type="submit" class="btn" style="display:block;">Submit</button>
-			</form>
+				<h2 style="display:none;">Hmm.. yes, how frustrating</h2>
+			
+				<form action="do.php">
+					<input type="text" name="reason" class="input-xxlarge" />
+					<button type="submit" class="btn" style="display:block;">Submit</button>
+				</form>
+			</div>
 		</div>
 		
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready( function() {
+				$('form button').click( function(e){
+					e.preventDefault();
+					$('.theform form').fadeOut();
+					$('.theform h2').delay(400).fadeIn();
+				} );
+			} );
+		
+		</script>
 	</body>
 </html>
